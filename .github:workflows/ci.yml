@@ -1,0 +1,33 @@
+name: iOS CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macOS-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Xcode
+        uses: actions/setup-xcode@v2
+        with:
+          xcode-version: '12.x'
+
+      - name: Install Dependencies
+        run: |
+          gem install bundler
+          bundle install
+
+      - name: Build
+        run: xcodebuild clean build -scheme "News Flash" -destination "platform=iOS Simulator,OS=latest" CODE_SIGNING_REQUIRED=NO
+
+      - name: Run Tests
+        run: xcodebuild test -scheme "News Flash" -destination "platform=iOS Simulator,OS=latest" CODE_SIGNING_REQUIRED=NO
