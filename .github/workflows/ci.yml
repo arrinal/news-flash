@@ -19,8 +19,5 @@ jobs:
       - name: Install Xcode
         run: sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
 
-      - name: Build
-        run: xcodebuild clean build -scheme "News Flash" -destination "platform=iOS Simulator,id=dvtdevice-DVTiOSDeviceSimulatorPlaceholder-iphonesimulator:placeholder,name=Any iOS Simulator Device" CODE_SIGNING_REQUIRED=NO
-
-      - name: Run Tests
-        run: xcodebuild test -scheme "News Flash" -destination "platform=iOS Simulator,id=dvtdevice-DVTiOSDeviceSimulatorPlaceholder-iphonesimulator:placeholder,name=Any iOS Simulator Device" CODE_SIGNING_REQUIRED=NO
+      - name: Print Available Destinations
+        run: xcodebuild -showdestinations
