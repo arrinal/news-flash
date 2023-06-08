@@ -4,20 +4,25 @@ on:
   push:
     branches:
       - main
+      - develop
   pull_request:
     branches:
       - main
+      - develop
 
 jobs:
   build:
-    runs-on: macOS-latest
+    runs-on: macos-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Install Xcode
-        run: sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+      - name: Set up Xcode
+        uses: actions/setup-xcode@v2
+        with:
+          xcode-version: 12.3.1
 
-      - name: Print Available Destinations
-        run: xcodebuild -showdestinations
+      - name: Build and Test
+        run: |
+          xcodebuild clean test -project "News Flash.xcodeproj" -scheme "News Flash" -destination "platform=iOS Simulator,OS=16.4,name=iPhone 14"
