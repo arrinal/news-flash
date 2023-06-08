@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout
 
       - name: Set up Xcode
-        uses: actions/setup-xcode@v2
+        uses: actions/setup-xcode
         with:
           xcode-version: '12.x'
 
