@@ -24,7 +24,6 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          cd /Users/runner/work/news-flash/news-flash
           bundle install
 
       - name: Build
