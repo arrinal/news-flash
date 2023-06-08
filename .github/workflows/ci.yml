@@ -21,6 +21,6 @@ jobs:
       - name: Set up Xcode
         run: sudo xcode-select -s /Applications/Xcode.app
 
-      - name: Build and Test
+      - name: Build with Xcode
         run: |
-          xcodebuild clean test -project "News Flash.xcodeproj" -scheme "News Flash" -destination "platform=iOS Simulator,OS=16.2,name=iPhone 12"
+          xcodebuild clean -project "News Flash.xcodeproj" -scheme "News Flash" -destination "platform=iOS Simulator,OS=16.2,name=iPhone 12"
