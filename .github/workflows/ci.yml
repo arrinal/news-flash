@@ -20,7 +20,7 @@ jobs:
         run: sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
 
       - name: Build
-        run: xcodebuild clean build -scheme "News Flash" -destination "platform=iOS Simulator,OS=latest" CODE_SIGNING_REQUIRED=NO
+        run: xcodebuild clean build -scheme "News Flash" -destination "platform=iOS Simulator,name=iPhone 14,OS=16.4" CODE_SIGNING_REQUIRED=NO
 
       - name: Run Tests
-        run: xcodebuild test -scheme "News Flash" -destination "platform=iOS Simulator,OS=latest" CODE_SIGNING_REQUIRED=NO
+        run: xcodebuild test -scheme YourScheme -"News Flash" "platform=iOS Simulator,name=iPhone 14,OS=16.4" CODE_SIGNING_REQUIRED=NO
