@@ -19,9 +19,12 @@ jobs:
       - name: Install Xcode
         run: sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
 
+      - name: Install Bundler
+        run: gem install bundler -v '2.4.13'
+
       - name: Install Dependencies
         run: |
-          gem install bundler
+          cd path/to/project/directory
           bundle install
 
       - name: Build
