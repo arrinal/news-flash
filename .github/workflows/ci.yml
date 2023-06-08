@@ -23,4 +23,4 @@ jobs:
 
       - name: Build and Test
         run: |
-          xcodebuild clean test -project "News Flash.xcodeproj" -scheme "News Flash" -destination "platform=iOS Simulator,name=Any iOS Simulator Device"
+          xcodebuild clean test -project "News Flash.xcodeproj" -scheme "News Flash" -destination "platform=iOS Simulator,OS=16.2,name=Any iOS Simulator Device"
