@@ -60,8 +60,8 @@ platform :ios do
     team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
     api_key = lane_context[SharedValues::APP_STORE_CONNECT_API_KEY]
 
-    keychain_name = "signing"
-    keychain_password = "temp"
+    keychain_name = "signing-cert"
+    keychain_password = "12345"
 
     delete_keychain(
       name: keychain_name
