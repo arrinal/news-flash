@@ -27,9 +27,9 @@ platform :ios do
   desc "Load ASC API Key information to use in subsequent lanes"
   lane :load_asc_api_key do
     app_store_connect_api_key(
-      key_id: ENV["ASC_KEY_ID"],
-      issuer_id: ENV["ASC_ISSUER_ID"],
-      key_content: ENV["ASC_KEY"],
+      key_id: "Z48PP2L6K6",
+      issuer_id: "832e703c-c8f4-4c6f-a3af-ad5e795428bb",
+      key_content: "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JR1RBZ0VBTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEJIa3dkd0lCQVFRZ3FXRXErYTdGMzhNZzZJZDIKcDBWOHp0SUFqTmlQMU5TVTY3UUhxbkU1OWZXZ0NnWUlLb1pJemowREFRZWhSQU5DQUFUdkYxblNFY2pHVy8vcQppbkJQV1pVaFVheVRQR3Zwelh4cWxISWt3SGEwYXhSKytaMDcwRWw2UlZ5V2hKcnd3YXM1SFV6R3JCUmhNS1hUCjdkeGdnQm5FCi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0=",
       is_key_content_base64: true,
       in_house: false # detecting this via ASC private key not currently supported
     )
@@ -76,8 +76,8 @@ platform :ios do
     )
 
     import_certificate(
-      certificate_path: ENV["SIGNING_KEY_FILE_PATH"],
-      certificate_password: ENV["SIGNING_KEY_PASSWORD"],
+      certificate_path: "signing-cert.p12",
+      certificate_password: "12345",
       keychain_name: keychain_name,
       keychain_password: keychain_password
     )
